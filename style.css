@@ -8,35 +8,31 @@
 /* Custom Properties */
 :root {
     /* Primary & Accent Colors */
-    --primary-color: #faa700; /* Bright Orange - Matches your logo */
-    --secondary-color: #1e1e1e; /* Darker charcoal for contrast with black */
-    --highlight-color: #ffffff; /* White for accents and highlights */
+    --primary-color: #FF007F; /* Vivid Pink - Main accent color */
+    --secondary-color: #00FFFF; /* Neon Blue - Secondary accent */
+    --highlight-color: #ffffff; /* White for text and highlights */
     
     /* Glowing Effect Colors */
-    --glow-color: #fdd835; /* Soft yellowish gold glow - close to the orange but less intense */
-    --glow-accent-color: rgba(250, 167, 0, 0.8); /* Same orange glow accent with transparency */
+    --glow-color: #AA00FF; /* Electric Purple for subtle glows */
+    --glow-accent-color: rgba(255, 0, 127, 0.5); /* Transparent pink for effects */
     
     /* Background & Card Styling */
-    --background-color: #000000; /* Black background for sleek contrast */
-    --card-bg: rgba(0, 0, 0, 0.75); /* Dark card background to blend with the black theme */
-    --card-shadow: 0 8px 24px rgba(250, 167, 0, 0.3), 0 0 6px rgba(255, 255, 255, 0.1); /* Orange and white shadow effects for subtle glows */
+    --background-color: #000000; /* Black background */
+    --card-bg: rgba(0, 0, 0, 0.75); /* Dark card background */
+    --card-shadow: 0 8px 24px rgba(255, 0, 127, 0.2); /* Subtle pink shadow */
 
     /* Transition & Animation */
-    --transition-speed: 0.3s; /* Keep smooth transitions for UI elements */
+    --transition-speed: 0.3s;
 
     /* Neon Text & Glow Effects */
-    --neon-text-shadow: 0 0 8px rgba(250, 167, 0, 0.8), /* Intense orange glow */
-                        0 0 15px rgba(255, 255, 255, 0.5), /* White glow for a clean neon effect */
-                        0 0 21px rgba(0, 255, 255, 0.1); /* Subtle cyan blue glow for depth */
+    --neon-text-shadow: 0 0 8px rgba(255, 0, 127, 0.8); /* Single color glow */
 }
-
-
 
 /* Body Styling */
 body {
     font-family: 'Inter', Arial, sans-serif;
     background: var(--background-color);
-    color: #ffffff;
+    color: var(--highlight-color);
     min-height: 100vh;
     line-height: 1.6;
     overflow-x: hidden;
@@ -70,8 +66,8 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at center, 
-                rgba(0, 247, 255, 0.1) 0%,
-                rgba(0, 247, 255, 0) 70%);
+                rgba(255, 0, 127, 0.1) 0%,
+                rgba(0, 0, 0, 0) 70%);
     z-index: -1;
     pointer-events: none;
 }
@@ -90,23 +86,23 @@ body {
 }
 
 .profile-image-wrapper img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 4px solid var(--glow-color);
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
     transition: transform var(--transition-speed);
 }
 
 .profile-image-wrapper:hover img {
-    transform: scale(1.05);
+    transform: scale(1.005);
 }
 
 .status-badge {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background: var(--glow-color);
+    background: var(--secondary-color);
     color: var(--background-color);
     padding: 4px 12px;
     border-radius: 20px;
@@ -121,15 +117,13 @@ body {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 12px;
-    background: linear-gradient(45deg, #fff, var(--glow-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     text-shadow: var(--neon-text-shadow);
 }
 
 .profile-container p {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--highlight-color);
     margin-bottom: 25px;
     max-width: 600px;
     margin: 0 auto;
@@ -153,22 +147,20 @@ body {
     border-radius: 50%;
     background: var(--card-bg);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-color);
     transition: all var(--transition-speed);
     text-decoration: none;
 }
 
-
 .social-icon i {
     font-size: 1.4rem;
-    color: var(--glow-color);
+    color: #ffffff;
     transition: all var(--transition-speed);
 }
 
 .social-icon:hover {
     transform: translateY(-5px);
-    border-color: var(--glow-color);
-    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.2);
+    border-color: var(--secondary-color);
 }
 
 .icon-tooltip {
@@ -176,7 +168,7 @@ body {
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--glow-color);
+    background: var(--secondary-color);
     color: var(--background-color);
     padding: 4px 8px;
     border-radius: 4px;
@@ -208,43 +200,25 @@ body {
     gap: 15px;
     background: var(--card-bg);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--secondary-color);
     border-radius: 12px;
     padding: 16px 20px;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--highlight-color);
     transition: all var(--transition-speed);
     position: relative;
     overflow: hidden;
 }
 
-.link-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-                rgba(0, 247, 255, 0.1),
-                rgba(0, 247, 255, 0));
-    opacity: 0;
-    transition: opacity var(--transition-speed);
-}
-
 .link-card:hover {
     transform: translateX(5px);
-    border-color: var(--glow-color);
+    border-color: var(--primary-color);
     box-shadow: var(--card-shadow);
-}
-
-.link-card:hover::before {
-    opacity: 1;
 }
 
 .link-card i:first-child {
     font-size: 1.4rem;
-    color: var(--glow-color);
+    color: var(--secondary-color);
     transition: transform var(--transition-speed);
 }
 
@@ -255,7 +229,7 @@ body {
 }
 
 .arrow-icon {
-    color: var(--glow-color);
+    color: var(--primary-color);
     opacity: 0;
     transform: translateX(-10px);
     transition: all var(--transition-speed);
